@@ -1,0 +1,21 @@
+<idea-plugin>
+    <id>me.parerga.plugins.auto-changelog</id>
+    <name>Auto Changelog</name>
+    <vendor email="gunta.parerga@gmail.com">Parerga</vendor>
+
+    <description><![CDATA[
+    При коммите изменений, при желании, автоматически добавляет в changelog файл первой строкой сообщение коммита для всех подмодулей проекта.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <checkinHandlerFactory implementation="PreCommitCheckinHandlerFactory" />
+        <projectConfigurable groupId="tools"
+                             displayName="Auto Changelog"
+                             instance="AutoChangelogConfigurable" />
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>
